@@ -8,4 +8,4 @@ set -eu
 # Index addresses for auto-completion
 find $HOME/msg/ -type f -mmin -10 -print0 | \
   xargs -0 -n 1 -r /bin/sh -c 'lbdb-fetchaddr -a < "$1"' lbdb-fetchaddr
-SORT_OUTPUT=name /usr/lib/lbdb/lbdb-munge
+SORT_OUTPUT=name /usr/libexec/lbdb/lbdb-munge

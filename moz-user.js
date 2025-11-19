@@ -95,3 +95,9 @@ user_pref("browser.toolbars.bookmarks.visibility", "never");
 
 // Hide PDF.js sidebar by default
 user_pref("pdfjs.sidebarViewOnLoad", 0);
+
+// Hide unwanted extra UI elements
+user_pref("browser.ml.chat.enabled", false);
+user_pref("browser.ml.chat.menu", false);
+user_pref("browser.tabs.groups.smart.userEnabled", false);
+user_pref("browser.preferences.moreFromMozilla", false);

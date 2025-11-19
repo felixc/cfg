@@ -3,9 +3,8 @@
 set -e
 
 pwd=$(pwd)
-files=(aspell.en.pws caffrc emacs.d ledgerrc nethackrc offlineimaprc psqlrc \
-       signature quiltrc vimrc xbindkeysrc XCompose xinitrc Xresources \
-       xscreensaver zshenv zshrc)
+files=(aspell.en.pws caffrc emacs.d ledgerrc nethackrc psqlrc signature \
+       quiltrc vimrc XCompose Xresources xscreensaver zshenv zshrc)
 
 for file in $files; do;
   ln -srfT "$pwd/$file" "$HOME/.$file"
@@ -25,14 +24,6 @@ ln -srf "$pwd/gtk.css" "$HOME/.config/gtk-3.0/gtk.css"
 
 mkdir -p "$HOME/.config/fontconfig"
 ln -srf "$pwd/fonts.conf" "$HOME/.config/fontconfig/fonts.conf"
-
-mkdir -p "$HOME/.config/kitty"
-ln -srf "$pwd/kitty.conf" "$HOME/.config/kitty/kitty.conf"
-
-ln -srf "$pwd/mutt" "$HOME/.config/mutt"
-
-mkdir -p "$HOME/.config/notmuch/default"
-ln -srf "$pwd/notmuch" "$HOME/.config/notmuch/default/config"
 
 mkdir -p "$HOME/.config/tmux"
 ln -srf "$pwd/tmux.conf" "$HOME/.config/tmux/tmux.conf"
@@ -57,8 +48,6 @@ ln -srf "$pwd/ipython_config.py" "$HOME/.ipython/profile_default/ipython_config.
 mkdir -p "$HOME/.ssh"
 ln -srf "$pwd/ssh-config" "$HOME/.ssh/config"
 
-ln -srf "$HOME/.xinitrc" "$HOME/.xsessionrc"
-
 moz_profile_dir=$(find "$HOME/.mozilla/firefox" -name "*.default-beta" -type d 2> /dev/null || echo "")
 if [ -n "$moz_profile_dir" ]; then
     mkdir -p "$moz_profile_dir/chrome"
@@ -68,13 +57,3 @@ if [ -n "$moz_profile_dir" ]; then
 fi
 
 ln -srfT "$pwd/bin" "$HOME/bin"
-
-mkdir -p "$HOME/msg/.offlineimap"
-echo '#!/bin/sh\nofflineimap -u Quiet' >! "$HOME/msg/.offlineimap/run"
-chmod +x "$HOME/msg/.offlineimap/run"
-
-mkdir -p "$HOME/.xmonad"
-ln -srf "$pwd/xmonad.hs" "$HOME/.xmonad/xmonad.hs"
-if command -v xmonad > /dev/null; then
-  xmonad --recompile
-fi

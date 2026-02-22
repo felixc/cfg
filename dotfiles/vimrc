@@ -46,10 +46,6 @@ set noerrorbells
 set showmatch
 set matchtime=3
 
-" Spell checking is nice, and so is being able to add words to the dictionary
-set spellfile=~/.vim/spellfile.en.add
-setlocal spell spelllang=en_gb
-
 " A nice, dark colour scheme, so make things visible and highlight syntax
 set t_Co=256
 set background=dark
@@ -71,8 +67,8 @@ set nofoldenable
 " When splitting a window, put the new window below the original one
 set splitbelow
 
-" Configure what gets saved in the .viminfo history file
-set viminfo='0,\"0,%,/0,:10,@0,h
+" Configure what gets saved in the .viminfo history file, and where it lives
+set viminfo='0,\"0,%,/0,:10,@0,h,n~/.cache/viminfo
 
 " Remap the default motion keys so long, wrapped, but unsplit lines can be
 " navigated as independent lines

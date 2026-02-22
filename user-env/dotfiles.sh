@@ -8,7 +8,7 @@ set -eux
 run_as_local_user <<'EOUSERSCRIPT'
 
 files=(aspell.en.pws caffrc ledgerrc nethackrc psqlrc signature \
-       quiltrc vimrc XCompose xscreensaver)
+       quiltrc XCompose xscreensaver)
 for file in ${files}; do
   ln -sfT "${DOTFILESDIR}/${file}" "${HOME}/.${file}"
 done
@@ -24,6 +24,9 @@ ln -sfT "${DOTFILESDIR}/fonts.conf" "${HOME}/.config/fontconfig/fonts.conf"
 
 mkdir -p "${HOME}/.config/tmux"
 ln -sfT "${DOTFILESDIR}/tmux.conf" "${HOME}/.config/tmux/tmux.conf"
+
+mkdir -p "${HOME}/.config/vim"
+ln -sfT "${DOTFILESDIR}/vimrc" "${HOME}/.config/vim/vimrc"
 
 mkdir -p "${HOME}/.caff/gnupghome"
 ln -sfT "${DOTFILESDIR}/gnupg/gpg.conf" "${HOME}/.caff/gnupghome/gpg.conf"

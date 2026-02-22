@@ -200,3 +200,6 @@ function pygmentize_cat {
   done
 }
 existsp pygmentize && alias cat=pygmentize_cat
+
+# Colorize man pages
+export MANROFFOPT="-c"

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -eux
+
+
+LOCAL_USERNAME=felix
+LOCAL_HOMEDIR="$(sudo -u "${LOCAL_USERNAME}" /bin/sh -c 'echo $HOME')"
+DOTFILESDIR="${LOCAL_HOMEDIR}/cfg/dotfiles"
+
+
+run_as_local_user() {
+  sudo -u "${LOCAL_USERNAME}" \
+    LOCAL_USERNAME="${LOCAL_USERNAME}" \
+    DOTFILESDIR="${DOTFILESDIR}" \
+    XDG_RUNTIME_DIR="/run/user/$(id -u "${LOCAL_USERNAME}")" \
+    "$(readlink /proc/$$/exe)" -eux -
+}

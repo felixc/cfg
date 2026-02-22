@@ -203,3 +203,6 @@ existsp pygmentize && alias cat=pygmentize_cat
 
 # Colorize man pages
 export MANROFFOPT="-c"
+
+# Make less a bit nicer to use
+export LESS="--RAW-CONTROL-CHARS --ignore-case --clear-screen --tabs=4 --use-color"

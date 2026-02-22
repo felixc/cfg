@@ -1,8 +1,8 @@
 R /home/felix/
 
-+ /home/felix/cfg/emacs.d/init.el
-+ /home/felix/cfg/emacs.d/lisp/*
-- /home/felix/cfg/emacs.d
++ /home/felix/cfg/dotfiles/emacs.d/init.el
++ /home/felix/cfg/dotfiles/emacs.d/lisp/*
+- /home/felix/cfg/dotfiles/emacs.d
 
 + /home/felix/msg/archive/*
 - /home/felix/msg

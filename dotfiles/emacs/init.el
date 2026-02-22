@@ -17,7 +17,7 @@
 (setq frame-inhibit-implied-resize t)
 
 ; Search for files in a custom load-path
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
+(add-to-list 'load-path (expand-file-name "~/.config/emacs/lisp"))
 
 ; Manage packages
 (require 'my-package-management)

@@ -17,12 +17,6 @@ auto-save-list/
 .cpan/
 .dbus/
 .dvdcss/
-.emacs.d/eln-cache
-emacs.d/eln-cache
-.emacs.d/history
-emacs.d/history
-elpa/
-elpy/
 FiraxisLive/
 .fontconfig/
 .histfile

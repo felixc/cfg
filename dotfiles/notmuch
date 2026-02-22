@@ -1,13 +1,13 @@
-[database]
-path=/home/felix/msg
-
 [user]
 name=Felix Crux
 primary_email=felixc@felixcrux.com
 
+[database]
+mail_root=/home/felix/msg
+path=/home/felix/.local/state/notmuch/default
+
 [new]
 tags=unread;inbox;
-ignore=.offlineimap
 
 [search]
 exclude_tags=spam;

@@ -1,5 +1,5 @@
 [general]
-metadata = ~/msg/.offlineimap
+metadata = ~/.local/state/offlineimap
 accounts = fastmail
 pythonfile = ~/bin/offlineimap-helpers.py
 

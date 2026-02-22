@@ -1,4 +1,4 @@
-import keyring
+import os
 
 
 FOLDER_NAMES = (
@@ -32,8 +32,6 @@ def remote_to_local(remote_name):
 
 
 def get_password():
-    """Look up the account's password from the Gnome Keyring."""
-    return keyring.get_password(
-        "mail.messagingengine.com",
-        "felixc@felixcrux.com",
-    )
+    """Look up the account's password from the systemd credential file."""
+    with open(os.path.join(os.getenv("CREDENTIALS_DIRECTORY"), "OFFLINEIMAP_PASS")) as credfile:
+        return credfile.readline().strip()

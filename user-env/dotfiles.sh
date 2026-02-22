@@ -7,8 +7,7 @@ set -eux
 
 run_as_local_user <<'EOUSERSCRIPT'
 
-files=(aspell.en.pws caffrc ledgerrc nethackrc psqlrc signature \
-       quiltrc XCompose xscreensaver)
+files=(aspell.en.pws caffrc ledgerrc nethackrc psqlrc quiltrc XCompose xscreensaver)
 for file in ${files}; do
   ln -sfT "${DOTFILESDIR}/${file}" "${HOME}/.${file}"
 done

@@ -68,8 +68,5 @@ trash/
 /wrk/felixcrux.com/files/doc/
 /wrk/felixcrux.com/out/
 /wrk/nginx/letsencrypt/
-.Xauthority
-.xmonad/
-.xsession-errors*
 .zcompdump
 __pycache__/

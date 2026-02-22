@@ -59,9 +59,6 @@ R /home/felix/
 ! /home/felix/wrk/felixcrux.com/files/doc
 ! /home/felix/wrk/nginx/letsencrypt
 ! /home/felix/wrk/**/out
-! /home/felix/.Xauthority
-! /home/felix/.xmonad
-! /home/felix/.xsession-errors*
 ! /home/felix/.zcompdump
 ! /home/felix/.zoom
 

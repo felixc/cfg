@@ -13,7 +13,7 @@ for file in ${files}; do
 done
 
 mkdir -p "${HOME}/.config"
-files=(user-dirs.dirs git gtk-3.0 lbdb)
+files=(user-dirs.dirs git lbdb)
 for file in ${files}; do
   ln -sfT "${DOTFILESDIR}/${file}" "${HOME}/.config/${file}"
 done

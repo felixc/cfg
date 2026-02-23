@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -u
+
+if [ -z "${1-}" ]; then
+    printf "Specify remote host: ./sync-to hostname\n"
+    exit 1
+fi
+
+while sleep 0.1; do
+  find . \( -type l -o -type d \( -name '.git' -o -path './bin/ff' -o -name '__pycache__' \) \) -prune -o -print | \
+    entr -d \
+      rsync -Lazyv \
+        --exclude '.git' --exclude 'bin/ff' --exclude 'bin/firefox' --exclude '__pycache__' --delete \
+        "$(pwd)/" "$1":"$(pwd)/"
+done

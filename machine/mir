@@ -1,0 +1,52 @@
+#!/bin/sh
+
+set -eux
+
+
+if [ "$(hostname --short)" != "mir" ]; then
+  exit 1
+fi
+
+. ./machine/local-env
+
+
+./base/install-packages.sh
+./base/unattended-upgrades.sh
+./base/set-timezone.sh
+./base/create-users.sh
+./base/sudoers-config.sh
+./base/dns.sh
+./base/network-interfaces.sh
+./base/firewall.sh
+./base/email.sh
+./base/systemd-unit-failure-notification.sh
+./base/create-cron-log-file.sh
+./base/add-mountpoints.sh
+./base/monitor-drives.sh
+./base/tune-filesystems.sh
+./base/shorten-grub-timeout.sh
+./base/vtty-appearance.sh
+./base/disable-old-nfs-versions.sh
+./base/hardware-sensors.sh
+
+./services/ups.sh
+./services/backups.sh
+./services/prometheus.sh
+./services/ssh.sh
+
+./user-env/zsh-shell.sh
+./user-env/terminal-emulator.sh
+./user-env/emacs-editor.sh
+./user-env/app-appearance.sh
+./user-env/hyprland.sh
+./user-env/waybar.sh
+./user-env/dunst.sh
+./user-env/rofi.sh
+./user-env/add-ssh-key-on-login.sh
+./user-env/rust-toolchain.sh
+./user-env/email-client.sh
+./user-env/dotfiles.sh
+
+
+# Configure Bluetooth for the PS5 DualSense controller
+sed -i -E -e 's/\s*#*\s*UserspaceHID=.*/UserspaceHID=true/' /etc/bluetooth/input.conf

@@ -3,7 +3,7 @@
 set -eux
 
 
-HOSTNAME="mir"
+HOSTNAME="$(hostname --short)"
 LOCAL_USERNAME=felix
 LOCAL_HOMEDIR="$(sudo -u "${LOCAL_USERNAME}" /bin/sh -c 'echo $HOME')"
 DOTFILESDIR="${LOCAL_HOMEDIR}/cfg/dotfiles"
